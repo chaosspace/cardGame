@@ -1,13 +1,53 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --hue: 220;
+  --accent: var(--hue) 50% 50%;
+  --bkg: var(--hue) 40% 98%;
+  --txt: var(--hue) 70% 12%;
+}
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-size: 3rem;
+  padding: 2rem;
+  background-color: hsl(var(--bkg));
+  color: hsl(var(--txt));
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+button {
+  font: inherit;
+  font-weight: bold;
+  background: none;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 1rem hsl(var(--accent) / 0.4),
+              0 0 0 -.4rem hsl(var(--bkg)),
+              0 0 0 -.8rem hsl(var(--accent));
+  transition: box-shadow .2s ease-in-out;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+button:is(:hover, :focus-visible) {
+  box-shadow: 0 0 0 hsl(var(--accent) / 0.2),
+              0 0 0 .3rem hsl(var(--bkg)),
+              0 0 0 .6rem hsl(var(--accent));
+}
+h2{
+  position: absolute;
+  top: 0;
+}
+.iconfont{
+  font-family: 'iconfont'!important;
+  font-style: normal;
 }
